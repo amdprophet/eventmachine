@@ -93,7 +93,7 @@ void Mapper_t::Close()
 		// I don't know at what point that changed from older Solaris.
 		munmap ((char*)MapPoint, FileSize);
 		#else
-		munmap ((void*)MapPoint, FileSize);
+		munmap ((char*)MapPoint, FileSize);
 		#endif
 		MapPoint = NULL;
 	}
