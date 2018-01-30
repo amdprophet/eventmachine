@@ -375,10 +375,12 @@ public class EmReactor {
 	}
 
 	public void sendData (long sig, ByteBuffer bb) throws IOException {
+	    System.out.println("omg sendData ByteBuffer");
 		Connections.get(sig).scheduleOutboundData( bb );
 	}
 
 	public void sendData (long sig, byte[] data) throws IOException {
+	    System.out.println("omg sendData byte array");
 		sendData (sig, ByteBuffer.wrap(data));
 	}
 
